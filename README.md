@@ -20,13 +20,13 @@ Only send USDT via BNB Smart Chain (BEP-20). Sending funds through other network
 
 ## 🇪🇸 Spanish Version
 
-![MASIVO Spanish Poster](./poster-es.png)
+![MASIVO English Poster](./poster-es.png)
 
 ---
 
 ## 🇬🇧 English Version
 
-![MASIVO English Poster](./poster-en.png)
+![MASIVO Spanish Poster](./poster-en.png)
 
 ---
 
