@@ -1,130 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MASIVO – Crypto Donation</title>
+<title>MASIVO – World Champion Project</title>
 
 <style>
 body {
-    margin:0;
-    font-family: Arial, sans-serif;
-    color:white;
-    overflow-x:hidden;
-    background: radial-gradient(circle at top, #0a0f1f 0%, #000000 70%);
+  margin:0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  overflow-x:hidden;
+  background: radial-gradient(circle at top, #0a0f1f 0%, #000000 80%);
 }
 
-/* PARTICLES BACKGROUND */
+/* PARTICLES */
 #particles-js {
-    position:fixed;
-    width:100%;
-    height:100%;
-    z-index:-1;
+  position:fixed;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
 /* FLEX LAYOUT */
 .wrapper {
-    display:flex;
-    justify-content:space-between;
-    min-height:100vh;
+  display:flex;
+  justify-content:space-between;
+  min-height:100vh;
 }
 
 /* LEFT SIDE */
 .container {
-    width:65%;
-    padding:60px 40px;
-    text-align:center;
+  width:65%;
+  padding:50px 40px;
+  text-align:center;
 }
 
 h1 {
-    font-size:50px;
-    background: linear-gradient(90deg,#00f0ff,#00ff99,#ffcc00);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+  font-size:50px;
+  background: linear-gradient(90deg,#00f0ff,#00ff99,#ffcc00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* POSTERS */
 .poster {
-    width:100%;
-    max-width:450px;
-    margin:20px auto;
-    border-radius:20px;
-    box-shadow:0 0 30px rgba(0,255,200,0.3);
-    transition:0.4s;
+  width:100%;
+  max-width:450px;
+  margin:20px auto;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(0,255,200,0.5);
+  transition:0.5s;
 }
 .poster:hover {
-    transform:scale(1.05);
-    box-shadow:0 0 50px rgba(0,255,200,0.7);
+  transform:scale(1.05);
+  box-shadow:0 0 60px rgba(0,255,200,0.8);
 }
 
-/* WALLET BOX */
 .wallet-box {
-    margin-top:50px;
-    padding:30px;
-    background: rgba(15,20,40,0.95);
-    border-radius:20px;
-    border:1px solid rgba(0,255,200,0.4);
-    box-shadow:0 0 25px rgba(0,255,200,0.3);
+  margin-top:50px;
+  padding:30px;
+  background: rgba(15,20,40,0.95);
+  border-radius:20px;
+  border:1px solid rgba(0,255,200,0.4);
+  box-shadow:0 0 25px rgba(0,255,200,0.3);
 }
 
 .wallet-address {
-    margin:20px 0;
-    padding:15px;
-    background: rgba(0,0,0,0.6);
-    border-radius:10px;
-    word-break: break-all;
-    font-weight:bold;
-    border:1px solid #00ffcc;
-    font-size:16px;
+  margin:20px 0;
+  padding:15px;
+  background: rgba(0,0,0,0.6);
+  border-radius:10px;
+  word-break: break-all;
+  font-weight:bold;
+  border:1px solid #00ffcc;
+  font-size:16px;
 }
 
 .copy-btn {
-    padding:15px 35px;
-    border-radius:40px;
-    border:none;
-    font-weight:bold;
-    cursor:pointer;
-    background: linear-gradient(90deg,#00ffcc,#ffcc00);
-    color:black;
-    font-size:16px;
-    transition:0.3s;
+  padding:15px 35px;
+  border-radius:40px;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+  background: linear-gradient(90deg,#00ffcc,#ffcc00);
+  color:black;
+  font-size:16px;
+  transition:0.3s;
 }
 .copy-btn:hover {
-    transform:scale(1.1);
-    box-shadow:0 0 35px rgba(0,255,200,0.8);
+  transform:scale(1.1);
+  box-shadow:0 0 35px rgba(0,255,200,0.8);
 }
 
 .network {
-    margin-top:15px;
-    color:#00ffcc;
-    font-size:14px;
+  margin-top:15px;
+  color:#00ffcc;
+  font-size:14px;
 }
 
 /* RIGHT CHAT */
 .chat {
-    width:33%;
-    padding:60px 20px;
-    border-left:1px solid rgba(0,255,200,0.2);
-    background: rgba(0,0,0,0.4);
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    height:100vh;
-    overflow-y:auto;
-    position:sticky;
-    top:0;
+  width:33%;
+  padding:40px 20px;
+  border-left:1px solid rgba(0,255,200,0.2);
+  background: rgba(0,0,0,0.4);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  height:100vh;
+  overflow-y:auto;
+  position:sticky;
+  top:0;
 }
 
 .chat h2 {
-    text-align:center;
-    color:#00ffcc;
-    margin-bottom:20px;
-    text-shadow:0 0 10px #00ffcc;
+  text-align:center;
+  color:#00ffcc;
+  margin-bottom:20px;
+  text-shadow:0 0 10px #00ffcc;
 }
 
-/* GLOW ANIMATION FOR CHAT MESSAGES */
+/* GLOW MESSAGES */
 .giscus-frame {
-    border-radius:15px !important;
-    box-shadow:0 0 20px rgba(0,255,200,0.6);
+  border-radius:15px !important;
+  box-shadow:0 0 20px rgba(0,255,200,0.6);
+}
+
+/* DONORS LIST */
+#recent-donors {
+  margin-bottom:20px;
+  text-align:left;
+  font-size:14px;
+  background: rgba(0,0,0,0.3);
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #00ffcc;
+  color:#00ffcc;
+}
+#recent-donors li {
+  margin:5px 0;
 }
 </style>
 </head>
@@ -144,27 +157,28 @@ h1 {
 
 <div class="wallet-box">
     <h2>💰 DONATE</h2>
-
     <div class="wallet-address" id="wallet">
-    0xD7c380DEC5677C48697bCE07fAaba4e6B878D0ba
+        0xD7c380DEC5677C48697bCE07fAaba4e6B878D0ba
     </div>
-
-    <button class="copy-btn" onclick="copyWallet()">
-        Copy Address
-    </button>
-
-    <p class="network">
-        Network: BSC (BEP20)
-    </p>
+    <button class="copy-btn" onclick="copyWallet()">Copy Address</button>
+    <p class="network">Network: BSC (BEP20)</p>
 </div>
 
 </div>
 
-<!-- RIGHT SIDE: Giscus Chat -->
+<!-- RIGHT SIDE: Chat + donors -->
 <div class="chat">
 <h2>💬 Proof of Donation</h2>
 
-<!-- GISCUS INTEGRATION -->
+<ul id="recent-donors">
+<li>0xabc… donated 10 USDT</li>
+<li>0xdef… donated 5 USDT</li>
+<li>0x123… donated 20 USDT</li>
+<li>0x456… donated 1 USDT</li>
+<li>0x789… donated 7 USDT</li>
+</ul>
+
+<!-- Giscus Chat -->
 <script src="https://giscus.app/client.js"
         data-repo="1MASIVO1/1MASIVO1.github.io"
         data-repo-id="YOUR_REPO_ID"
@@ -187,7 +201,7 @@ h1 {
 <script>
 particlesJS("particles-js", {
   "particles": {
-    "number": { "value": 90 },
+    "number": { "value": 100 },
     "color": { "value": "#00ffcc" },
     "shape": { "type": "circle" },
     "opacity": { "value": 0.6 },
@@ -199,7 +213,7 @@ particlesJS("particles-js", {
       "opacity": 0.4,
       "width": 1
     },
-    "move": { "enable": true, "speed": 4 }
+    "move": { "enable": true, "speed": 5 }
   }
 });
 
