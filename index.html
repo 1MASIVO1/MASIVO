@@ -2,229 +2,27 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>MASIVO – World Champion Project</title>
+<title>MASIVO METAVERSE NFT</title>
+<link rel="stylesheet" href="style.css">
 
-<style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  overflow-x:hidden;
-  background: radial-gradient(circle at top, #0a0f1f 0%, #000000 80%);
-}
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-/* PARTICLES */
-#particles-js {
-  position:fixed;
-  width:100%;
-  height:100%;
-  z-index:-1;
-}
-
-/* FLEX LAYOUT */
-.wrapper {
-  display:flex;
-  justify-content:space-between;
-  min-height:100vh;
-}
-
-/* LEFT SIDE */
-.container {
-  width:65%;
-  padding:50px 40px;
-  text-align:center;
-}
-
-h1 {
-  font-size:50px;
-  background: linear-gradient(90deg,#00f0ff,#00ff99,#ffcc00);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.poster {
-  width:100%;
-  max-width:450px;
-  margin:20px auto;
-  border-radius:20px;
-  box-shadow:0 0 40px rgba(0,255,200,0.5);
-  transition:0.5s;
-}
-.poster:hover {
-  transform:scale(1.05);
-  box-shadow:0 0 60px rgba(0,255,200,0.8);
-}
-
-.wallet-box {
-  margin-top:50px;
-  padding:30px;
-  background: rgba(15,20,40,0.95);
-  border-radius:20px;
-  border:1px solid rgba(0,255,200,0.4);
-  box-shadow:0 0 25px rgba(0,255,200,0.3);
-}
-
-.wallet-address {
-  margin:20px 0;
-  padding:15px;
-  background: rgba(0,0,0,0.6);
-  border-radius:10px;
-  word-break: break-all;
-  font-weight:bold;
-  border:1px solid #00ffcc;
-  font-size:16px;
-}
-
-.copy-btn {
-  padding:15px 35px;
-  border-radius:40px;
-  border:none;
-  font-weight:bold;
-  cursor:pointer;
-  background: linear-gradient(90deg,#00ffcc,#ffcc00);
-  color:black;
-  font-size:16px;
-  transition:0.3s;
-}
-.copy-btn:hover {
-  transform:scale(1.1);
-  box-shadow:0 0 35px rgba(0,255,200,0.8);
-}
-
-.network {
-  margin-top:15px;
-  color:#00ffcc;
-  font-size:14px;
-}
-
-/* RIGHT CHAT */
-.chat {
-  width:33%;
-  padding:40px 20px;
-  border-left:1px solid rgba(0,255,200,0.2);
-  background: rgba(0,0,0,0.4);
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  height:100vh;
-  overflow-y:auto;
-  position:sticky;
-  top:0;
-}
-
-.chat h2 {
-  text-align:center;
-  color:#00ffcc;
-  margin-bottom:20px;
-  text-shadow:0 0 10px #00ffcc;
-}
-
-/* GLOW MESSAGES */
-.giscus-frame {
-  border-radius:15px !important;
-  box-shadow:0 0 20px rgba(0,255,200,0.6);
-}
-
-/* DONORS LIST */
-#recent-donors {
-  margin-bottom:20px;
-  text-align:left;
-  font-size:14px;
-  background: rgba(0,0,0,0.3);
-  padding:10px;
-  border-radius:10px;
-  border:1px solid #00ffcc;
-  color:#00ffcc;
-}
-#recent-donors li {
-  margin:5px 0;
-}
-</style>
 </head>
-
 <body>
 
-<div id="particles-js"></div>
+<video autoplay muted loop id="bgvideo">
+<source src="video/metaverse.mp4" type="video/mp4">
+</video>
 
-<div class="wrapper">
+<h1>MASIVO NFT COLLECTION</h1>
 
-<!-- LEFT SIDE: Posters + Wallet -->
-<div class="container">
-<h1>SUPPORT THE PROJECT</h1>
+<div id="nft-container"></div>
 
-<img src="poster-es.png" class="poster">
-<img src="poster-en.png" class="poster">
-
-<div class="wallet-box">
-    <h2>💰 DONATE</h2>
-    <div class="wallet-address" id="wallet">
-        0xD7c380DEC5677C48697bCE07fAaba4e6B878D0ba
-    </div>
-    <button class="copy-btn" onclick="copyWallet()">Copy Address</button>
-    <p class="network">Network: BSC (BEP20)</p>
+<div id="viewer" onclick="closeViewer()">
+<img id="viewer-img">
 </div>
 
-</div>
-
-<!-- RIGHT SIDE: Chat + donors -->
-<div class="chat">
-<h2>💬 Proof of Donation</h2>
-
-<ul id="recent-donors">
-<li>0xabc… donated 10 USDT</li>
-<li>0xdef… donated 5 USDT</li>
-<li>0x123… donated 20 USDT</li>
-<li>0x456… donated 1 USDT</li>
-<li>0x789… donated 7 USDT</li>
-</ul>
-
-<!-- Giscus Chat -->
-<script src="https://giscus.app/client.js"
-        data-repo="1masivo1/1masivo1.github.io"
-        data-repo-id="R_kgDORXAQAw"
-        data-category="General"
-        data-category-id="DIC_kwDORXAQA84C3EOY"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="es"
-        crossorigin="anonymous"
-        async>
-</script>
-
-</div>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script>
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 100 },
-    "color": { "value": "#00ffcc" },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.6 },
-    "size": { "value": 3 },
-    "line_linked": {
-      "enable": true,
-      "distance": 180,
-      "color": "#00ffcc",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": { "enable": true, "speed": 5 }
-  }
-});
-
-function copyWallet() {
-  const wallet = document.getElementById("wallet").innerText;
-  navigator.clipboard.writeText(wallet);
-  alert("Wallet copied successfully!");
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
